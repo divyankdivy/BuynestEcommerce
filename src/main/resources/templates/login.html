@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{base :: layout(~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+</head>
+<body>
+    <section>
+        <div class="login-section-container">
+            <div class="login-container">
+
+                <div class="logo-container">
+                    <img class="logo" th:src="@{/img/nest.png}" alt="Buyest">
+                </div>
+
+                <div class="login-card">
+
+                    <div th:if="${session.successMsg}" class="alert alert-success">
+                        <p th:text="${session.successMsg}"></p>
+                        <th:block th:text="${@commonServiceImpl.removeSessionMessage()}"></th:block>
+                    </div>
+
+                    <div th:if="${session.errorMsg}" class="alert alert-error">
+                        <p th:text="${session.errorMsg}"></p>
+                        <th:block th:text="${@commonServiceImpl.removeSessionMessage()}"></th:block>
+                    </div>
+
+                    <h2 class="login-heading">
+                        Login
+                    </h2>
+
+                    <p class="login-instructions">Please enter your details to sign in.</p>
+
+                    <form class="login-form" th:action="@{/login}" method="post">
+                        <label for="email">E-Mail Address</label>
+                        <input type="email" id="email" name="username" placeholder="Enter your email" required>
+
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Password@123" required>
+
+                        <div class="form-options">
+                            <a class="forget-link" th:href="@{/forgetPassword}">Forgot password?</a>
+                        </div>
+
+                        <button type="submit" class="btn-login">Sign in</button>
+                    </form>
+
+                    <p class="signup-text">
+                        Don’t have an account yet? <a th:href="@{/register}">Sign up</a>
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+</body>
+</html>
