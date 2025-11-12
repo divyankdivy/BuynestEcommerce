@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{base :: layout(~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Products Page</title>
+</head>
+<body>
+    <section>
+
+        <div class="products-page-container">
+
+            <!-- Left Sidebar -->
+            <aside class="sidebar">
+                <h2 class="sidebar-heading">Categories</h2>
+                <ul class="category-list">
+
+                    <!-- Show All / All Categories -->
+                    <li>
+                        <a th:href="@{/products}"
+                           th:classappend="${selectedCategoryId == null} ? 'active-category'">All Categories</a>
+                    </li>
+
+                    <!-- List of categories -->
+                    <li th:each="cat : ${categories}">
+                        <a th:href="@{'/products?category=' + ${cat.categoryId}}"
+                           th:text="${cat.name}" th:classappend="${selectedCategoryId == cat.categoryId} ? 'active-category'">
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+
+            <!-- Right Side: Product Grid -->
+            <div class="products-container">
+                <h2 class="products-heading">Products</h2>
+
+                <div class="product-grid">
+                    <!-- Sample product card -->
+                    <div class="product-card" th:each="p: ${products}">
+                        <img th:src="@{'/img/product_img/' + ${p.imageName}}" alt="Product Image" class="product-img">
+                        <h3 class="product-title" th:text="${p.title}" ></h3>
+                        <button class="btn-view"><a th:href="@{'/product-view/' + ${p.productId}}">View Details</a></button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+</body>
+</html>
