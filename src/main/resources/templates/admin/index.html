@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{base :: layout(~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Index</title>
+</head>
+<body>
+    <section>
+        <div class="admin-dashboard">
+            <h2 class="dashboard-heading">Admin Dashboard</h2>
+
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <svg class="dashboard-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                    </svg>
+                    <button class="dashboard-btn"><a class="admin-links" th:href="@{/admin/add-product}">Add Product</a></button>
+                </div>
+
+                <div class="dashboard-card">
+                    <svg class="dashboard-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18" />
+                    </svg>
+                    <button class="dashboard-btn"><a class="admin-links" th:href="@{/admin/add-category}">Add Category</a></button>
+                </div>
+
+                <div class="dashboard-card">
+                    <svg class="dashboard-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16v12H4z" />
+                    </svg>
+                    <button class="dashboard-btn"><a class="admin-links" th:href="@{/admin/viewProducts}">View Products</a></button>
+                </div>
+
+                <div class="dashboard-card">
+                    <svg class="dashboard-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m2 4H7a2 2 0 01-2-2V6h14v8a2 2 0 01-2 2z" />
+                    </svg>
+                    <button class="dashboard-btn">Orders</button>
+                </div>
+
+                <div class="dashboard-card">
+                    <svg class="dashboard-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A4 4 0 0112 15a4 4 0 016.879 2.804M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <button class="dashboard-btn"><a class="admin-links" th:href="@{/admin/viewUsers}">Users</a></button>
+                </div>
+
+                <div class="dashboard-card">
+                    <svg class="dashboard-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v4m0 0v4m0-4h4m-4 0H8m8 8h4m-4 0H8" />
+                    </svg>
+                    <button class="dashboard-btn">Add Admin</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
