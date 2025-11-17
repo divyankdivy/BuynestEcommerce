@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base :: layout(~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit User Page</title>
+</head>
+<body>
+    <section>
+        <div class="edit-user-container">
+
+            <h2 class="edit-user-title">User Details</h2>
+
+            <p class="edit-user-field"><strong>Name:</strong> [[${user.fullName}]]</p>
+            <p class="edit-user-field"><strong>Email:</strong> [[${user.email}]]</p>
+
+            <p class="edit-user-field"><strong>Address:</strong><br>
+                [[${user.street}]], [[${user.area}]], [[${user.city}]]<br>
+                [[${user.state}]] - [[${user.pinCode}]]
+            </p>
+
+            <p class="edit-user-field"><strong>Phone:</strong> [[${user.mobileNumber}]]</p>
+
+            <form action="/admin/viewUser/update_role" method="post" class="edit-user-form">
+                <input type="hidden" name="userId" th:value="${user.userId}">
+
+                <label for="role" class="edit-user-label"><strong>Role:</strong></label>
+
+                <select name="role" id="role" class="edit-user-select">
+                    <option value="ROLE_USER"
+                            th:selected="${user.role == 'ROLE_USER'}">USER</option>
+
+                    <option value="ROLE_ADMIN"
+                            th:selected="${user.role == 'ROLE_ADMIN'}">ADMIN</option>
+                </select>
+
+                <button type="submit" class="edit-user-btn">Update Role</button>
+            </form>
+
+            <a href="/admin/viewUsers" class="edit-user-back">← Back</a>
+        </div>
+<!--        <div class="container">-->
+<!--            <h2>User Details</h2>-->
+
+<!--            <p><strong>Name:</strong> [[${user.fullName}]]</p>-->
+<!--            <p><strong>Email:</strong> [[${user.email}]]</p>-->
+
+<!--            <p><strong>Address:</strong><br>-->
+<!--                [[${user.street}]], [[${user.area}]], [[${user.city}]]<br>-->
+<!--                [[${user.state}]] - [[${user.pinCode}]]-->
+<!--            </p>-->
+
+<!--            <p><strong>Phone:</strong> [[${user.mobileNumber}]]</p>-->
+
+<!--            <form action="/admin/viewUser/update_role" method="post">-->
+<!--                <input type="hidden" name="userId" th:value="${user.userId}">-->
+
+<!--                <label for="role"><strong>Role:</strong></label>-->
+<!--                <select name="role" id="role">-->
+<!--                    <option value="ROLE_USER"-->
+<!--                            th:selected="${user.role == 'ROLE_USER'}">USER</option>-->
+
+<!--                    <option value="ROLE_ADMIN"-->
+<!--                            th:selected="${user.role == 'ROLE_ADMIN'}">ADMIN</option>-->
+<!--                </select>-->
+
+<!--                <button type="submit">Update Role</button>-->
+<!--            </form>-->
+
+<!--            <a href="/admin/viewUsers">Back</a>-->
+<!--        </div>-->
+    </section>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base :: layout(~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <title>My Profile</title>
+</head>
+<body>
+    <section>
+        <div class="profile-page-container">
+
+            <!-- Header -->
+            <div class="profile-header">
+                <h2>My Profile</h2>
+            </div>
+
+            <!-- Personal Details Card -->
+            <div class="profile-card">
+                <h3>Personal Details</h3>
+
+                <p><strong>Full Name:</strong>
+                    <span th:text="${profile.fullName}"></span>
+                </p>
+
+                <p><strong>Email:</strong>
+                    <span th:text="${profile.email}"></span>
+                </p>
+
+                <p><strong>Mobile:</strong>
+                    <span th:text="${profile.mobileNumber}"></span>
+                </p>
+            </div>
+
+            <!-- Address Card -->
+            <div class="profile-card">
+                <h3>Address</h3>
+
+                <p><strong>Street:</strong>
+                    <span th:text="${profile.street}"></span>
+                </p>
+
+                <p><strong>Area:</strong>
+                    <span th:text="${profile.area}"></span>
+                </p>
+
+                <p><strong>City:</strong>
+                    <span th:text="${profile.city}"></span>
+                </p>
+
+                <p><strong>State:</strong>
+                    <span th:text="${profile.state}"></span>
+                </p>
+
+                <p><strong>Pin Code:</strong>
+                    <span th:text="${profile.pinCode}"></span>
+                </p>
+            </div>
+
+            <!-- Actions -->
+            <div class="profile-actions">
+                <a th:href="@{/user/editProfile}" class="btn-edit-profile">Edit Profile</a>
+
+                <a th:href="@{/forgetPassword}" class="btn-edit-profile">
+                    Change Password
+                </a>
+
+                <form th:action="@{/user/deleteAccount}" method="post" style="display:inline;">
+                    <button type="submit" class="btn-delete-account"
+                            onclick="return confirm('Are you sure you want to delete your account permanently?');">
+                        Delete Account
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+</body>
+</html>
