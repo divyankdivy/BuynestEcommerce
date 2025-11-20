@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{base :: layout(~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Success Page</title>
+</head>
+<body>
+    <section>
+        <div class="order-success-section">
+            <div class="order-success-box">
+
+                <h2 class="order-success-title">Order Placed Successfully!</h2>
+
+                <p class="order-success-message" th:text="${successMessage}"></p>
+
+                <a th:href="@{/}" class="order-success-btn">Back to Home</a>
+
+            </div>
+        </div>
+    </section>
+</body>
+</html>

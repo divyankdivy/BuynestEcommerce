@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base :: layout(~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Otp Verification Page</title>
+</head>
+<body>
+    <section>
+        <div class="login-section-container">
+            <div class="login-container">
+
+                <div class="logo-container">
+                    <img class="logo" th:src="@{/img/nest.png}" alt="Buyest">
+                </div>
+
+                <div class="login-card">
+
+                    <div th:if="${session.successMsg}" class="alert alert-success">
+                        <p th:text="${session.successMsg}"></p>
+                        <th:block th:text="${@commonServiceImpl.removeSessionMessage()}"></th:block>
+                    </div>
+
+                    <div th:if="${session.errorMsg}" class="alert alert-error">
+                        <p th:text="${session.errorMsg}"></p>
+                        <th:block th:text="${@commonServiceImpl.removeSessionMessage()}"></th:block>
+                    </div>
+
+                    <h2 class="login-heading">
+                        Verify OTP
+                    </h2>
+
+                    <p class="login-instructions">
+                        Please enter the 6-digit OTP sent to your email.
+                    </p>
+
+                    <form class="login-form" th:action="@{/verifyOtp}" method="post">
+
+                        <input type="hidden" name="email" th:value="${email}">
+
+                        <label for="otp">OTP</label>
+                        <input type="text" id="otp" name="otp" placeholder="Enter OTP" maxlength="6" required>
+
+                        <button type="submit" class="btn-login">Verify OTP</button>
+                    </form>
+
+                    <p class="signup-text">
+                        Didn’t receive the OTP? <a href="/forgot-password">Resend</a>
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+</body>
+</html>
