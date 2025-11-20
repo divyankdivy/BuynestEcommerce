@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base :: layout(~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <section>
+        <section>
+            <div class="admin-order-page">
+
+                <!-- Page Heading -->
+                <div class="admin-order-page-header">
+                    <h2>Order Details</h2>
+                </div>
+
+                <!-- Order Info -->
+                <div class="admin-order-info">
+                    <p><strong>Order Number:</strong> <span th:text="${order.orderNumber}"></span></p>
+                    <p><strong>User:</strong> <span th:text="${order.user.fullName}"></span> (<span th:text="${order.user.email}"></span>)</p>
+                    <p><strong>Payment Method:</strong> <span th:text="${order.paymentMethod}"></span></p>
+                    <p><strong>Status:</strong> <span th:text="${order.status}"></span></p>
+                    <p><strong>Total Amount:</strong> <span th:text="${order.totalAmount}"></span></p>
+
+                </div>
+
+                <!-- Products in order -->
+                <div class="admin-order-products">
+                    <div class="admin-order-card" th:each="item : ${orderItems}">
+                        <div class="admin-order-card-img">
+                            <img th:src="${item.product.imageName}" alt="Product Image"/>
+                        </div>
+                        <div class="admin-order-card-details">
+                            <h3>
+                                <a th:href="@{'/product-view/' + ${item.product.productId}}"
+                                   class="order-name-heading-text"
+                                   th:text="${item.product.title}">
+                                </a>
+                            </h3>
+                            <p>Quantity: <span th:text="${item.quantity}"></span></p>
+                            <p>Price: ₹<span th:text="${item.price}"></span></p>
+                            <p>Subtotal: ₹<span th:text="${item.quantity * item.price}"></span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Back Button -->
+                <a th:href="@{/admin/viewOrders}" class="admin-order-back-btn">Back to Orders</a>
+
+            </div>
+        </section>
+    </section>
+</body>
+</html>

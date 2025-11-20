@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base :: layout(~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Order Page</title>
+</head>
+<body>
+    <section>
+        <div class="product-page-container">
+
+            <!-- Dark header -->
+            <div class="product-header">
+                <h2>All Orders</h2>
+            </div>
+
+            <!-- Orders table -->
+            <table class="product-table">
+                <thead>
+                <tr>
+                    <th>Order Number</th>
+                    <th>User</th>
+                    <th>Date</th>
+                    <th>Total (₹)</th>
+                    <th>Status</th>
+                    <th>Payment</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="order : ${orders}">
+                    <td th:text="${order.orderNumber}">ODR_XXXXXX</td>
+                    <td th:text="${order.user.fullName}">User Name</td>
+                    <td th:text="${#temporals.format(order.orderDate, 'dd-MM-yyyy HH:mm')}"></td>
+                    <td th:text="${order.totalAmount}">0.0</td>
+                    <td th:text="${order.status}">Pending</td>
+                    <td th:text="${order.paymentMethod}">Payment</td>
+                    <td>
+                        <a th:href="@{'/admin/viewOrder/' + ${order.orderNumber}}" class="btn-edit">View</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <a th:if="${currentPage > 0}" th:href="@{/admin/orders(page=${currentPage - 1})}" class="prev">Prev</a>
+
+                <span th:each="i : ${#numbers.sequence(0, totalPages - 1)}">
+                    <a th:if="${i != currentPage}" th:href="@{/admin/orders(page=${i})}" th:text="${i + 1}">1</a>
+                    <span th:if="${i == currentPage}" th:text="${i + 1}">1</span>
+                </span>
+
+                <a th:if="${currentPage < totalPages - 1}" th:href="@{/admin/orders(page=${currentPage + 1})}" class="next">Next</a>
+            </div>
+
+        </div>
+    </section>
+</body>
+</html>
