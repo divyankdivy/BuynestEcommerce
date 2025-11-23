@@ -1,0 +1,154 @@
+/* Checkout Page Wrapper */
+/* Checkout Page Container */
+.checkout-wrapper {
+    max-width: 120rem;
+    margin: 2rem auto;
+    border-radius: 1rem;
+    overflow: hidden; /* ensures header bg stays inside border */
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+    background-color: #e6e6e6; /* light bg for rest of container */
+}
+
+/* Checkout Header */
+.checkout-header {
+    background-color: #222b32;
+    width: 100%;
+    padding: 2rem;
+}
+
+.checkout-header-title {
+    color: #f0f0f0;
+    font-size: 2.4rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Form Flex Layout */
+.checkout-wrapper-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+/* Sections */
+.checkout-section {
+    flex: 1;
+    min-width: 28rem;
+    background-color: #f0f0f0;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+/* Section Titles */
+.checkout-section-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.checkout-address-inline {
+    display: inline; /* inline container */
+    font-size: 1.6rem; /* adjust text size */
+    color: #333;
+}
+
+.checkout-address-inline span {
+    display: inline; /* ensure each piece is inline */
+}
+
+/* Paragraphs */
+.checkout-section p {
+    margin: 0.5rem 0;
+}
+
+/* Table */
+.checkout-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.checkout-table th,
+.checkout-table td {
+    padding: 0.8rem 1rem;
+    text-align: left;
+    border-bottom: 0.1rem solid #c0c0c0;
+}
+
+.checkout-table th {
+    background-color: #e0e0e0;
+    font-weight: 500;
+}
+
+.checkout-table th,
+.checkout-table td {
+    font-size: 1.6rem; /* increase from previous smaller size */
+}
+
+/* Payment Method Card */
+.checkout-payment-card {
+    background-color: #f0f0f0;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+/* Payment Card Title */
+.payment-card-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #222b32;
+}
+
+/* Divider line under heading */
+.payment-divider {
+    height: 0.1rem;
+    background-color: #cfcfcf;
+    margin: 1rem 0; /* space between title and box */
+}
+
+/* Payment Options Box */
+.checkout-payment-box {
+    border: 0.1rem solid #cfcfcf; /* subtle border on all sides */
+    border-radius: 0.8rem;
+    padding: 1.5rem;
+}
+
+.checkout-payment-box label {
+    font-size: 1.8rem;
+    color: #333;
+    display: block;
+    margin-bottom: 0.8rem;
+}
+
+.checkout-payment-box input[type="radio"] {
+    margin-right: 0.8rem;
+}
+
+.checkout-btn-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Place Order Button on Right */
+.checkout-btn-right .checkout-btn {
+    width: auto; /* not full width */
+    padding: 1rem 2.5rem;
+    font-size: 1.6rem;
+    border: none;
+    border-radius: 1rem;       /* rounded corners */
+    background-color: #384047; /* theme color */
+    color: #d8d8d8;            /* text color */
+    cursor: pointer;            /* pointer on hover */
+    transition: 0.2s;
+}
+
+.checkout-btn-right .checkout-btn:hover {
+    background-color: #222b32; /* darker shade on hover */
+    color: #f0f0f0;
+}

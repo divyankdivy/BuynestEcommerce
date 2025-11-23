@@ -1,0 +1,47 @@
+/* Order Success Page */
+.order-success-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    background-color: #f0f0f0;
+    padding: 5rem 0;
+}
+
+.order-success-box {
+    background-color: #f0f0f0;
+    box-shadow: 0 2rem 3rem -1rem rgba(0, 0, 0, 0.15);
+    border-radius: 2rem;
+    padding: 3rem 4rem;
+    text-align: center;
+    width: 45rem;
+}
+
+.order-success-title {
+    font-size: 2.8rem;
+    color: #222b32;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.order-success-message {
+    font-size: 1.8rem;
+    color: #555555;
+    margin-bottom: 3rem;
+}
+
+.order-success-btn {
+    display: inline-block;
+    padding: 1.2rem 3rem;
+    background-color: #384047;
+    color: #d8d8d8;
+    font-size: 1.6rem;
+    border-radius: 1rem;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.order-success-btn:hover {
+    background-color: #222b32;
+    color: #f0f0f0;
+}

@@ -1,0 +1,172 @@
+/* ============================= */
+/* CART PAGE - THEME MATCHED     */
+/* ============================= */
+
+/* Wrapper inside big container */
+.cart-items-wrapper {
+    width: 100%;
+    padding: 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Each cart item card */
+.cart-item-card {
+    background-color: #e6e6e6;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.1);
+}
+
+/* Image */
+.cart-item-image-box {
+    flex-shrink: 0;
+}
+
+.cart-item-image {
+    width: 8rem;
+    height: 8rem;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+/* Info */
+.cart-item-info {
+    flex-grow: 1;
+}
+
+.cart-item-title {
+    font-size: 2rem;
+    margin-bottom: 2.5rem; /* Increased gap */
+    color: #222b32;
+}
+
+.cart-item-price {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Price on right */
+.cart-item-price-box {
+    text-align: right;
+}
+
+/* Quantity Controls */
+.cart-qty-row {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.remove-cart-icon {
+    width: 2.2rem;
+    height: 2.2rem;
+    color: #384047;
+    margin-left: 4rem;
+}
+
+.remove-cart-icon:hover {
+    color: #a93226;
+    transform: scale(1.05);
+}
+
+.qty-btn {
+    padding: 0.5rem 1.2rem;
+    background-color: #384047;
+    color: #f0f0f0;
+    border-radius: 0.6rem;
+    text-decoration: none;
+    font-size: 1.6rem;
+    transition: 0.2s;
+    border: none;           /* REMOVE BORDER */
+    outline: none;
+}
+
+.qty-btn:hover {
+    background-color: #222b32;
+}
+
+.qty-number {
+    font-size: 1.8rem;
+    color: #333;
+}
+
+/* Remove Button */
+.cart-remove-box {
+    margin-left: auto;
+}
+
+.cart-remove-btn-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+/********** Cart Summary *************/
+
+.cart-summary-box {
+    background: #e5e5e5;       /* soft grey, not pure white */
+    padding: 2rem;
+    border-radius: 1.2rem;
+    /*border: 0.2rem solid #cfcfcf;   !* subtle border, sharper edges *!*/
+    margin-top: 2rem;
+    width: 100%;
+    box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.05);
+    color: #333
+}
+
+.container-for-alignment {
+    display: grid;
+    grid-template-columns: minmax(12rem, 16rem) auto;
+    row-gap: 1rem;
+    width: 40rem;
+    justify-content: space-between;
+
+    margin-left: auto;
+}
+
+/* Make both rows structure match */
+.cart-summary-row {
+    display: contents;
+}
+
+/* Styling */
+.cart-summary-label {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.cart-summary-value {
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: right;
+}
+
+.checkout-btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /* button on right */
+    margin-top: 1rem;
+}
+
+.checkout-btn {
+    background-color: #384047;
+    color: #d8d8d8;
+    font-size: 1.8rem;
+    padding: 1rem 2.5rem;
+    border-radius: 1rem;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.checkout-btn:hover {
+    background-color: #222b32;
+    color: #f0f0f0;
+}
